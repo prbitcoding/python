@@ -13,9 +13,9 @@ class Book:
 
     def return_book(self):
         self.copies += 1
-        print(f" thanks Returned '{self.title}, copies now: {self.copies}")
+        print(f" thanks Returned '{self.title}, copies available: {self.copies}")
 
-book1 = Book("book", "total", 2)
+book1 = Book("man jane", "total", 2)
 book1.borrow()         
 book1.borrow()          
 book1.borrow()              
