@@ -1,5 +1,4 @@
 class InsufficientFundsError(Exception):
-    """Custom exception for insufficient funds in the account."""
     pass
 
 class Account:
@@ -31,6 +30,6 @@ try:
     with Account(1000) as account:
         account.deposit(500)
         account.withdraw(1200)
-        account.withdraw(50)   
+        account.withdraw(500)   
 except InsufficientFundsError as e:
     print(f"Error: {e}")
