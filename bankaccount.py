@@ -1,4 +1,4 @@
-class InsufficientFundsError(Exception):
+class InsufficientError(Exception):
     pass
 
 class Account:
@@ -11,7 +11,7 @@ class Account:
 
     def withdraw(self, amount):
         if amount > self.balance:
-            raise InsufficientFundsError(f"Cannot withdraw {amount}: insufficient funds.")
+            raise InsufficientError(f"Cannot withdraw {amount}: insufficient funds.")
         self.balance -= amount
         print(f"Withdrew: {amount}, New balance: {self.balance}")
 
@@ -20,9 +20,7 @@ class Account:
         return self
 
     def __exit__(self, exc_type, exc_value, traceback):
-        if exc_type:
-            print(f"Exception occurred: {exc_value}")
-        print("Exiting account context.")
+        print(f"Exception occurred: {exc_value}" if exc_type else "", "Exiting account context")
         return False
 
  
@@ -31,5 +29,5 @@ try:
         account.deposit(500)
         account.withdraw(1200)
         account.withdraw(500)   
-except InsufficientFundsError as e:
+except InsufficientError as e:
     print(f"Error: {e}")

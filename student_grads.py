@@ -15,6 +15,11 @@ class Student:
             return 0
         return sum(self._marks) / len(self._marks)
     
+    def __str__(self):
+        return f"{self.name}: {self.average:.2f} average over {len(self._marks)} marks"
+
+    
+    
 student = Student("total average")
 student.add_mark(90)
 student.add_mark(80)

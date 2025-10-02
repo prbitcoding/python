@@ -18,7 +18,6 @@ class Task:
     def __repr__(self):
         return f"Task({self.title!r}, {self.priority})"
 
-# Example usage:
 tasks = [
     Task("Write report", 2),
     Task("Email team", 1),

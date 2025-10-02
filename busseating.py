@@ -1,9 +1,9 @@
 queue = ['harsh', 'harshil', 'yash', 'abhi', 'gopal', 'henish', 'parthu']
-bus = []
+buslist = []
 
-while len(bus) < 5 and len(queue) > 0:
+while len(buslist) < 5 and len(queue) > 0:
     person = queue.pop(0)   
-    bus.append(person)  
+    buslist.append(person)  
  
-print("Seated:", bus)
+print("Seated:", buslist)
 print("Left in queue:", queue)

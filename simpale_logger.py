@@ -1,9 +1,9 @@
 class FileLogger:
-    def __init__(self, filename):
-        self.filename = filename
+    def __init__(self, file1):
+        self.file1 = file1
 
     def __enter__(self):
-        self.file = open(self.filename, 'a')    
+        self.file = open(self.file1, 'a')    
         return self.file
 
     def __exit__(self, exc_type, exc_value, traceback):
